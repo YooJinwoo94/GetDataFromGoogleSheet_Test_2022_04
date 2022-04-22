@@ -22,14 +22,19 @@ public class GetGoogleSpreadSheets : MonoBehaviour
 
     void setText(string tsv)
     {
+        //가로 기준으로 나눈다.
         string[] row = tsv.Split('\n');
+        //  열 = 세로의 양
         int rowSize = row.Length;
+        // 오 = 가로의 양
         int columSize = row[0].Split('\t').Length;
 
+        // 열의 길이로 가로로 나눈다.
         for (int i = 0; i < rowSize; i++)
         {
             string[] column = row[i].Split('\t');
 
+            // 오의 길이로 세로로 나눈다.
             for (int j = 0; j< columSize; j ++)
             {
                 Debug.Log(column[j]);
